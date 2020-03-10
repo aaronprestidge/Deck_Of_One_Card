@@ -7,16 +7,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="sGY-0Z-TKh">
             <objects>
-                <viewController id="R01-Cn-ogS" sceneMemberID="viewController">
+                <viewController id="R01-Cn-ogS" customClass="CardViewController" customModule="DeckOfOneCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IZa-P0-4L8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPK-hB-YQc">
+                                <rect key="frame" x="87" y="384" width="240" height="138"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-10-qcm">
+                                <rect key="frame" x="186" y="222" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5w-36-qlU">
+                                <rect key="frame" x="189" y="673" width="36" height="30"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="drawButtonTapped:" destination="R01-Cn-ogS" eventType="touchUpInside" id="BC1-PT-zcX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vPK-hB-YQc" firstAttribute="top" secondItem="Ofh-10-qcm" secondAttribute="bottom" constant="141" id="Abh-2S-c6c"/>
+                            <constraint firstItem="Ofh-10-qcm" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="BvS-2n-Qyd"/>
+                            <constraint firstItem="g5w-36-qlU" firstAttribute="top" secondItem="vPK-hB-YQc" secondAttribute="bottom" constant="151" id="GPW-26-JII"/>
+                            <constraint firstItem="dAx-36-yHn" firstAttribute="bottom" secondItem="g5w-36-qlU" secondAttribute="bottom" constant="159" id="Qd6-rU-m5I"/>
+                            <constraint firstItem="vPK-hB-YQc" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="R2f-yd-74G"/>
+                            <constraint firstItem="vPK-hB-YQc" firstAttribute="centerY" secondItem="dAx-36-yHn" secondAttribute="centerY" id="bPi-Qf-fYR"/>
+                            <constraint firstItem="g5w-36-qlU" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="cHx-ch-WuJ"/>
+                            <constraint firstItem="Ofh-10-qcm" firstAttribute="top" secondItem="dAx-36-yHn" secondAttribute="top" constant="178" id="zaq-Jy-x9A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dAx-36-yHn"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="vPK-hB-YQc" id="M8h-1k-7Qa"/>
+                        <outlet property="cardLabel" destination="Ofh-10-qcm" id="7RO-xf-sqH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKM-Hs-mUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
